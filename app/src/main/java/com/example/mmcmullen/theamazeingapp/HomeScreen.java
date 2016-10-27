@@ -13,6 +13,7 @@ public class HomeScreen extends AppCompatActivity {
     }
 
     public void Openpuzle_1(View v){
-        setContentView(R.layout.activity_puzel_1);
+        setContentView(R.layout.activity_puzle_1);
     }
 }
+//test2

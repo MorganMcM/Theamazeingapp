@@ -15,7 +15,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".puzel_1"></activity>
     </application>
+    </manifest>
 
-</manifest>
