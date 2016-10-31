@@ -1,5 +1,6 @@
 package com.example.mmcmullen.theamazeingapp;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -13,7 +14,8 @@ public class HomeScreen extends AppCompatActivity {
     }
 
     public void Openpuzle_1(View v){
-        setContentView(R.layout.activity_puzle_1);
+        Intent intent = new Intent (this, synchronizing_screen.class);
+        startActivity(intent);
     }
 }
 //test2

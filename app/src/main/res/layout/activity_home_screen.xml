@@ -52,5 +52,5 @@
         android:layout_below="@+id/textView2"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="51dp"
-        android:onClick="Openpuzel_1"/>
+        android:onClick="Openpuzle_1"/>
 </RelativeLayout>
