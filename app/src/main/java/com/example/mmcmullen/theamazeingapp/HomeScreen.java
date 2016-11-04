@@ -14,7 +14,7 @@ public class HomeScreen extends AppCompatActivity {
     }
 
     public void Openpuzle_1(View v){
-        Intent intent = new Intent (this, synchronizing_screen.class);
+        Intent intent = new Intent (this, tutorial.class);
         startActivity(intent);
     }
 }
