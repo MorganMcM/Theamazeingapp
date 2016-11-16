@@ -10,4 +10,7 @@ public class tutorial extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tutorial);
     }
+
+
+
 }
