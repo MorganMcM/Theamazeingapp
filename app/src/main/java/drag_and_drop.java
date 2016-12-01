@@ -4,6 +4,11 @@
 
 public class drag_and_drop {
 
+    private SensorManager mSensorManager;
+    private Sensor mSensor;
+    ...
+    mSensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
+    mSensor = mSensorManager.getDefaultSensor(Sensor.TYPE_GYROSCOPE);
 
     // Create a constant to convert nanoseconds to seconds.
     private static final float NS2S = 1.0f / 1000000000.0f;
