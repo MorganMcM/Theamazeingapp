@@ -1,21 +1,18 @@
-package com.example.mmcmullen.theamazeingapp;
-
-import android.hardware.SensorEvent;
-import android.hardware.SensorManager;
-
 /**
- * Created by mmcmullen on 11/16/2016.
+ * Created by mmcmullen on 11/30/2016.
  */
 
-public class Gyro {
+public class drag_and_drop {
 
+
+    // Create a constant to convert nanoseconds to seconds.
     private static final float NS2S = 1.0f / 1000000000.0f;
-    private static final float EPSILON = ;
-    protected final float[] deltaRotationVector = new float[4] 9();
+    private final float[] deltaRotationVector = new float[4]();
     private float timestamp;
 
     public void onSensorChanged(SensorEvent event) {
-
+        // This timestep's delta rotation to be multiplied by the current rotation
+        // after computing it from the gyro sample data.
         if (timestamp != 0) {
             final float dT = (event.timestamp - timestamp) * NS2S;
             // Axis of the rotation sample, not normalized yet.
@@ -27,12 +24,17 @@ public class Gyro {
             float omegaMagnitude = sqrt(axisX*axisX + axisY*axisY + axisZ*axisZ);
 
             // Normalize the rotation vector if it's big enough to get the axis
+            // (that is, EPSILON should represent your maximum allowable margin of error)
             if (omegaMagnitude > EPSILON) {
                 axisX /= omegaMagnitude;
                 axisY /= omegaMagnitude;
                 axisZ /= omegaMagnitude;
             }
 
+            // Integrate around this axis with the angular speed by the timestep
+            // in order to get a delta rotation from this sample over the timestep
+            // We will convert this axis-angle representation of the delta rotation
+            // into a quaternion before turning it into the rotation matrix.
             float thetaOverTwo = omegaMagnitude * dT / 2.0f;
             float sinThetaOverTwo = sin(thetaOverTwo);
             float cosThetaOverTwo = cos(thetaOverTwo);
@@ -48,15 +50,7 @@ public class Gyro {
         // in order to get the updated rotation.
         // rotationCurrent = rotationCurrent * deltaRotationMatrix;
     }
-
-    private float sqrt(float v) {
-    }
-
-    private float sin(float thetaOverTwo) {
-    }
-
-    private float cos(float thetaOverTwo) {
-    }
+}
 
 
 }
