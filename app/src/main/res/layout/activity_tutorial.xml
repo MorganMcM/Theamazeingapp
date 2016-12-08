@@ -61,8 +61,8 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Start"
-        android:textColor="#18ec10"
+        android:text="circle"
+        android:textColor="#101fec"
         android:textSize="28sp"
         android:textStyle="bold"
         android:id="@+id/textView3"
